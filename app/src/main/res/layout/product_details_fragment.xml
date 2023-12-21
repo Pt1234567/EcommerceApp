@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/product_image_cardView"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ProductImagesViewpager"/>
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close"
+                app:tint="@color/black"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/linear_name_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/product_image_cardView"
+            app:layout_constraintStart_toStartOf="@id/product_image_cardView"
+            app:layout_constraintEnd_toEndOf="@id/product_image_cardView"
+            android:layout_marginTop="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shirt"
+                android:layout_weight="1"
+                android:id="@+id/tv_productname"
+                android:textSize="26sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf_pro_display"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25334"
+                android:id="@+id/tv_productprice"
+                android:textSize="26sp"
+                android:textColor="#292929"
+                android:fontFamily="@font/sf_pro_display"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cheks shirt"
+            android:id="@+id/tv_productdescription"
+            app:layout_constraintTop_toBottomOf="@id/linear_name_price"
+            android:textSize="16sp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toStartOf="@id/linear_name_price"
+            android:textColor="#535353"
+            android:fontFamily="@font/sf_pro_display"/>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#676767"
+            app:layout_constraintTop_toBottomOf="@id/tv_productdescription"
+            app:layout_constraintStart_toStartOf="@id/tv_productdescription"
+            app:layout_constraintEnd_toEndOf="@id/linear_name_price"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/add_to_cart"
+            android:backgroundTint="#0027FF"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="@id/linear_name_price"
+            app:layout_constraintEnd_toEndOf="@id/linear_name_price"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:text="Add to Cart"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="15dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
