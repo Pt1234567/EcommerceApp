@@ -20,7 +20,7 @@ class BestProductsAdapter:RecyclerView.Adapter<BestProductsAdapter.BestProductsV
             product.offerPercentage?.let {
                 val remainingPercentageoffer=1f-it
                 val priceAfteroffer=(remainingPercentageoffer*product.price)
-                binding.productOfferPrice.text=priceAfteroffer.toString()
+                binding.productOfferPrice.text=String.format(priceAfteroffer.toString(),2)
                 binding.productPrice.paintFlags=Paint.STRIKE_THRU_TEXT_FLAG
             }
             if(product.offerPercentage==null){

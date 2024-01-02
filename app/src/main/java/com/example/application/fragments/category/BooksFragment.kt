@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.application.R
 import com.example.application.data.Category
 import com.example.application.util.Resource
 import com.example.application.viewModel.Factory.BaseCategoryViewModelFactory
@@ -27,6 +29,15 @@ class BooksFragment:BaseCategoryFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+    bestProductsAdapter.onClick={
+        val b=Bundle().apply { putParcelable("product",it) }
+        findNavController().navigate(R.id.action_homeFragment2_to_productDetailsFragment,b)
+    }
+        offerAdapter.onClick={
+            val b=Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment2_to_productDetailsFragment,b)
+        }
 
         lifecycleScope.launch {
             viewModel.offerproducts.collectLatest {

@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.example.application.R
 import com.example.application.databinding.ActivityShoppingBinding
 import com.example.application.util.Resource
@@ -46,6 +47,9 @@ class ShoppingActivity : AppCompatActivity() {
                 }
             }
         }
+
+//        val viewPager=findViewById<ViewPager2>(R.id.viewPager)
+//
 
 
     }

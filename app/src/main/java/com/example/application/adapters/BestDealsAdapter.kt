@@ -20,7 +20,7 @@ class BestDealsAdapter:RecyclerView.Adapter<BestDealsAdapter.BaseDealsViewHolder
                 product.offerPercentage?.let {
                     val remainingPercentageoffer=1f-it
                     val priceAfteroffer=remainingPercentageoffer*product.price
-                    binding.bestOfferPrice.text=priceAfteroffer.toString()
+                    binding.bestOfferPrice.text=String.format(priceAfteroffer.toString(),2)
                 }
             if(product.offerPercentage==null){
                 binding.bestOfferPrice.visibility= View.GONE

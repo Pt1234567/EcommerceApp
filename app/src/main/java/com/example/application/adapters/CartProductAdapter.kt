@@ -19,10 +19,11 @@ class CartProductAdapter:RecyclerView.Adapter<CartProductAdapter.CartproductView
           Glide.with(itemView).load(cartProduct.product.images[0]).into(binding.cartProductImage)
             binding.cartProductName.text=cartProduct.product.name
             binding.quantity.text=cartProduct.quantity.toString()
+            binding.cartProductPrice.text=cartProduct.product.price.toString()
             cartProduct.product.offerPercentage?.let {
                 val remainingPercentage=1f-it
                 val newPriceAfterOffer=remainingPercentage*cartProduct.product.price
-                binding.cartProductOfferprice.text=newPriceAfterOffer.toString()
+                binding.cartProductOfferprice.text=String.format(newPriceAfterOffer.toString(),2)
                 binding.cartProductPrice.paintFlags=Paint.STRIKE_THRU_TEXT_FLAG
             }
             if(cartProduct.product.offerPercentage==null){
